@@ -1,0 +1,32 @@
+type Query {
+
+    vehiculosDisponibles(
+        fechaInicio: String!
+        fechaFin: String!
+        tipo: TipoVehiculo
+        marca: String
+        modelo: String
+        precioMinimo: Float
+        precioMaximo: Float
+    ): [VehiculoDisponible]
+}
+
+type VehiculoDisponible {
+
+    patente: String
+    marca: String
+    modelo: String
+    anio: Int
+    color: String
+    tipo: TipoVehiculo
+    precioDiario: Float
+}
+
+enum TipoVehiculo {
+
+    SEDAN
+    SUV
+    PICKUP
+    COUPE
+    HATCHBACK
+}

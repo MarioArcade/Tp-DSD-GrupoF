@@ -58,6 +58,26 @@ public Vehiculo(String patente, String marca, String modelo, int anio, String co
 }
 
 
+public TipoVehiculo getTipo() {
+    return tipo;
+}
+
+
+public void setTipo(TipoVehiculo tipo) {
+    this.tipo = tipo;
+}
+
+
+public EstadoVehiculo getEstado() {
+    return estado;
+}
+
+
+public void setEstado(EstadoVehiculo estado) {
+    this.estado = estado;
+}
+
+
 public Long getId() {
     return id;
 }
