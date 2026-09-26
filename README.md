@@ -8,6 +8,7 @@ Para levantar el proyecto es necesario:
 utilizar postman para agregar vehiculos, clientes y reservas 
 
 http://localhost:8080/api/vehiculos 
+
 {
     "patente": "AB123CD",
     "marca": "Toyota",
@@ -21,6 +22,7 @@ http://localhost:8080/api/vehiculos
 }
 
 http://localhost:8080/api/clientes
+
 {
   "documento": "123456789",
     "nombre": "carlos",
