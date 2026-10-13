@@ -4,6 +4,7 @@ import com.rentar.rentar.dto.CrearReservaRequest;
 import com.rentar.rentar.modelos.Reserva;
 import com.rentar.rentar.servicios.ReservaService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -41,7 +42,6 @@ public class ReservaController {
                 reservaService.obtenerTodas()
         );
     }
-
     // Obtener una
     @GetMapping("/{id}")
     public ResponseEntity<Reserva> obtenerPorId(

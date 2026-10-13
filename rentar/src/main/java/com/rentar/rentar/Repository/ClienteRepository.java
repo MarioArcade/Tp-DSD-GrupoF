@@ -1,6 +1,9 @@
 package com.rentar.rentar.Repository;
 
 import com.rentar.rentar.modelos.Cliente;
+
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
@@ -9,4 +12,5 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
     boolean existsByEmailAndIdNot(String email, Long id);
 
     boolean existsByDocumentoAndIdNot(String documento, Long id);
+    Optional<Cliente> findByEmail(String email);
 }

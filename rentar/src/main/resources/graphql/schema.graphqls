@@ -1,5 +1,5 @@
 type Query {
-
+    historialAlquileres(clienteId: ID!): [HistorialAlquiler!]!
     vehiculosDisponibles(
         fechaInicio: String!
         fechaFin: String!
@@ -9,6 +9,15 @@ type Query {
         precioMinimo: Float
         precioMaximo: Float
     ): [VehiculoDisponible]
+
+    reservas(
+        clienteId: ID
+        vehiculoId: ID
+        tipo: TipoVehiculo
+        estado: EstadoReserva
+        fechaDesde: String
+        fechaHasta: String
+    ): [ReservaConsulta!]!
 }
 
 type VehiculoDisponible {
@@ -29,4 +38,38 @@ enum TipoVehiculo {
     PICKUP
     COUPE
     HATCHBACK
+}
+
+enum EstadoReserva {
+    CONFIRMADA
+    CANCELADA
+}
+
+type ReservaConsulta {
+    id: ID!
+    clienteId: ID!
+    nombreCliente: String
+    apellidoCliente: String
+    vehiculoId: ID!
+    patente: String!
+    marca: String
+    modelo: String
+    tipo: TipoVehiculo
+    fechaInicio: String!
+    fechaFin: String!
+    precioDiario: Float!
+    importeTotal: Float!
+    estado: EstadoReserva!
+}
+
+type HistorialAlquiler {
+    reservaId: ID!
+    patente: String!
+    marca: String
+    modelo: String
+    fechaInicio: String!
+    fechaFin: String!
+    dias: Int!
+    importeTotal: Float!
+    estado: EstadoReserva!
 }
