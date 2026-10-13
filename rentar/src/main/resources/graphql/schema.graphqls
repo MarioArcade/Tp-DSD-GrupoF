@@ -1,5 +1,5 @@
 type Query {
-    historialAlquileres(clienteId: ID!): [HistorialAlquiler!]!
+    historialAlquileres(clienteId: ID): [HistorialAlquiler!]!
     vehiculosDisponibles(
         fechaInicio: String!
         fechaFin: String!

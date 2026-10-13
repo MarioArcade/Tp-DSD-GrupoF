@@ -36,7 +36,10 @@ public class VehiculoGraphQLController {
 
         LocalDateTime fin =
                 LocalDateTime.parse(fechaFin);
-
+        
+        if (!fin.isAfter(inicio)) {
+                    throw new IllegalArgumentException( "La fecha de fin debe ser posterior a la fecha de inicio");
+        }
         List<Vehiculo> vehiculos =
                 vehiculoService.buscarDisponibles(
                         inicio,
